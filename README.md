@@ -6,9 +6,9 @@ Basic knowledge of Lua and ROBLOX Scripting is required for this course.
 
 If your just coming across this repository and don't know what PerlinCraft is you can check <a href="https://web.roblox.com/games/13473011206/PerlinCraft">this</a> out.
 
-I recommend reading the ROBLOX Studio documentation <a href="https://create.roblox.com/docs">here</a> if you dont know how to use ROBLOX Studio.
+I recommend reading the ROBLOX Studio documentation <a href="https://create.roblox.com/docs">here</a> if you don't know how to use ROBLOX Studio.
 
-Example projects are avaliable <a href="https://perlincraft.github.io/PerlinExamples">here</a>
+Example projects are available <a href="https://perlincraft.github.io/PerlinExamples">here</a>
 
 You can download this documentation to read it offline.
 
@@ -27,6 +27,9 @@ To make a hello world program in PerlinCraft you can open up the mod executor an
 ```lua
 _G.Shout("Hello, world!")
 ```
+
+```
+
 ## Creating Parts
 
 All the "Objects" in the game are stored in a variable called _G.World.
@@ -46,7 +49,7 @@ The second argument is the size of the part. And last of all is the parent of th
 
 ## Spawning Built-in objects
 
-So far the built in objects in PerlinCraft are the Zombie and Jeep.
+There are now a lot of objects in PerlinCraft.
 
 You will need to use CFrames to spawn these things we will spawn them at a players CFrame here
 
@@ -55,11 +58,15 @@ These functions will return the object to so you can save it into a variable.
 ```lua
 -- Zombie
 _G.SpawnZombie(_G.GetPlayerCF("username"), _G.World)
-_G.SpawnZombie(pos, parent)
+_G.SpawnZombie(cframe, parent)
 
 -- Jeep
 _G.SpawnJeep(_G.GetPlayerCF("username"), _G.World)
-_G.SpawnJeep(pos, parent)
+_G.SpawnJeep(cframe, parent)
+
+-- Sign
+_G.SpawnSign(_G.GetPlayerCF("username"), "text", _G.World)
+_G.SpawnSign(cframe, text, parent)
 
 ```
 
@@ -74,8 +81,16 @@ To get the names of all types of objects you can use this function.
 _G.ObjectTypes()
 ```
 It does not return any value but it instead prints a list of the objects in the message header.
-
 (Where you ran Hello, world!)
+
+
+There is 1 object that is not placeable. That object is: Bullet.
+
+You can spawn it on players or other objects with:
+```lua
+_G.ObjectTypes()
+```
+
 
 ## Player Functions
 
@@ -149,7 +164,10 @@ The "_G.CreatePart()" function also returns the part. This can be useful for cha
 
 You can reset your character to stop an infinite loop from a mod (If you ran it)
 
+## Spawning objects
+
+Most functions that spawn objects return the object. You know the drill!
 
 # End of the documentation
 
-Thanks for using this short introduction to PerlinCraft modding :D
+Thanks for using this simple introduction to PerlinCraft modding :D
